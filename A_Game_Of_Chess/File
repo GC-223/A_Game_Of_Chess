@@ -1,0 +1,36 @@
+
+
+lets start off with a basic representation of the board
+
+chessBoard class
+    this is an 8x8 array of TILES
+    
+    responsible for the initial setup of the board
+    
+    detecting if a king is in check
+        and if in check then it should block all moves that don't take it out of check
+    
+    detecting winning conditions
+    
+    
+    
+TILE class
+    
+    the board is made up of tiles
+    
+    a boolean to represent if the tile is occupied or not
+    
+    perhaps we give the chess coordinates to the tile?
+    
+
+Piece class
+    
+    responsible for many things
+    
+    should have the name of the piece
+    
+    symbol/board representation of piece
+    
+    checking if a move is legal or not for that specific piece
+    
+    should also have a color (boolean?) for each piece
