@@ -1,2 +1,48 @@
 
 
+
+ok so lets think of our board
+
+how are we going to represent a board
+
+a board is an 8x8 2d array of tiles
+    
+    each tile has a piece on it
+    
+    the board should handle logic such as checking if a move is legal
+    
+    handle checks and winning condition
+    
+    function to update board after a legal move
+    
+    a way to print the board
+    
+    constructor
+    
+
+each tile
+    may or may not have a piece
+    
+    i guess a boolean to tell if the space is occupied
+    
+    getter and setter for the piece
+    
+Piece
+    each piece has a color
+    
+    each piece has a symbol for how we want them to print
+    
+    each piece has a function to check if move is legal for that specific piece
+    
+Maybe we have a class to handles coordinates
+
+
+
+
+we cannot change a specific pieces color and symbol
+
+we can change the specific piece in a tile
+
+
+
+Change the piece on the tile --- Don't change the attributes of the piece on that tile

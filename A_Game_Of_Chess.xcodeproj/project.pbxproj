@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		960F58382B3F6A9100E5FF30 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 960F58372B3F6A9100E5FF30 /* main.cpp */; };
+		96E4F6B52B4DF91400732E91 /* linked_list_lol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96E4F6B42B4DF91400732E91 /* linked_list_lol.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,7 @@
 		960F58342B3F6A9100E5FF30 /* A_Game_Of_Chess */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = A_Game_Of_Chess; sourceTree = BUILT_PRODUCTS_DIR; };
 		960F58372B3F6A9100E5FF30 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		960F583E2B3F6A9B00E5FF30 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		96E4F6B42B4DF91400732E91 /* linked_list_lol.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = linked_list_lol.cpp; path = A_Game_Of_Chess/linked_list_lol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		960F582B2B3F6A9100E5FF30 = {
 			isa = PBXGroup;
 			children = (
+				96E4F6B42B4DF91400732E91 /* linked_list_lol.cpp */,
 				960F58362B3F6A9100E5FF30 /* A_Game_Of_Chess */,
 				960F58352B3F6A9100E5FF30 /* Products */,
 			);
@@ -121,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E4F6B52B4DF91400732E91 /* linked_list_lol.cpp in Sources */,
 				960F58382B3F6A9100E5FF30 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
