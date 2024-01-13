@@ -6,9 +6,93 @@
 //
 
 #include <array>
+#include <cmath>
 #include <iostream>
 #include <string>
 #include <string_view>
+
+
+
+
+struct Point2D
+{
+    // this is what column we are in
+    int m_x { } ;
+    
+    // this is what row we are in
+    int m_y { } ;
+} ;
+
+namespace UserInput
+{
+    // a function to get the piece/location of piece that they would like to move
+    std::string getPositionInput()
+    {
+        
+        // ok lets use a boolean to tell us when to get out of this loop
+        bool validPosition { false } ;
+
+        // variable to hold chessNotation position of piece
+        std::string position { } ;
+        
+        // while we don't have a valid position we should loop
+        while ( !validPosition )
+        {
+            std::cout << "Enter Position: " ;
+            std::cin >> position ;
+            
+            // must make sure to do error handling for all user input
+            // ignore everything that we do not use
+            std::cin.ignore( 1000000, '\n' ) ;
+            
+            
+            // lets just force the char value to be all lowercase
+            position[ 0 ] = std::tolower( position[ 0 ] ) ;
+            
+            if ( position.length() != 2 || ( position[0] < 'a' || position[0] > 'h' ) || ( position[1] < '1' || position[1] > '8' ) || !std::cin )
+            {
+                std::cout << "Error! Invalid Position!\n" ;
+                
+                // make sure to cleare any error flags and then also ignore everything left over that we don't want to use
+                std::cin.clear() ;
+                std::cin.ignore( 100000000, '\n' ) ;
+            }
+            else
+            {
+                validPosition = true ;
+            }
+            
+        }
+        
+        return position ;
+    }
+
+// now we want the function to convert the positionInput into values that we can use to index our chessBoard/turn it into a Point2D
+    Point2D convertToPoint( std::string_view positionString )
+    {
+        // this is what col we are in
+        // the column number corresponds to first char in string
+        // col corresponds to chars on bottom of board
+        int x { positionString[ 0 ] - 'a' } ;
+        
+        // this is what row we are in
+        // row corresponds to 2nd number in the string
+        // row corresponds to numbers on left of board
+        int y { -(positionString[ 1 ] - '8') } ;
+        
+        return { x, y } ;
+    }
+
+    // function to getMoveInput and convert to Point2D
+    Point2D getMoveInputAndConvert()
+    {
+        return convertToPoint( getPositionInput() ) ;
+    }
+    
+}
+
+
+
 
 class Piece
 {
@@ -59,7 +143,17 @@ public:
     }
     
     // function that will tell if a move was legal for the piece or not
+    // any blank piece that we are trying to move should be automatically false - (can't move a piece that doesn't exist)
     // should probably be virtual
+    virtual bool legalMove()
+    {
+        return false ;
+    }
+    
+    Color getColor()
+    {
+        return m_color ;
+    }
     
     
 } ;
@@ -70,14 +164,41 @@ private:
     // perhaps for handling en Passant?
     // a boolean
     // true if Pawn can still en Passant
-    bool m_enPassant { } ;
+    bool m_canEnPassant { } ;
+    
+    // must also input functionality for two space charge as first move
+    // maybe a boolean for if this piece has moved or not
+    bool m_canDoubleStep { } ;
     
     
 public:
     // constructor
-    Pawn( Color color )
+    Pawn( Color color, bool canDoStuff = true )
     : Piece( color, ( color == White )? "WP": "BP" )
+    , m_canEnPassant { canDoStuff }
+    , m_canDoubleStep { canDoStuff }
     {
+    }
+    
+    // override for legal move of pawn
+    virtual bool legalMove( const Point2D& startPoint, const Point2D& endPoint  )
+    {
+        
+        // the pawns most basic move is that it can move one space, straight
+        // so, lets do that
+        
+        // the column/x coordinate of startPoint must be the same as endPoint
+        
+        // white pawns can only move in a negative direction ( row/y coordinate must be negative )
+            // and for the most basic move, it must be negative 1
+        
+        if ( (startPoint.m_x != endPoint.m_x ) )
+        {
+            return false ;
+        }
+        
+        
+        return true;
     }
     
     
@@ -160,6 +281,18 @@ public:
     
 } ;
 
+// I guess we should have a playerClass?
+class Player
+{
+private:
+    // a variable to hold the color of the player
+    Piece::Color m_color { } ;
+    
+public:
+    
+    
+} ;
+
 
 class Tile
 {
@@ -233,7 +366,6 @@ public:
     ChessBoard()
     {
         newBoard() ;
-        
     }
     
     // function to create a completely new chessBoard
@@ -322,6 +454,9 @@ public:
     }
     
     
+    
+    
+    
 } ;
 
 
@@ -331,11 +466,14 @@ int main(int argc, const char * argv[])
     
     
     ChessBoard myBoard { } ;
-    
+        
     std::cout << myBoard <<'\n' ;
 
+    std::cout << '\n' ;
     
     
+    Point2D myPoint { UserInput::getMoveInputAndConvert() } ;
+    std::cout << myPoint.m_y << " " << myPoint.m_x << '\n' ;
     
     
     

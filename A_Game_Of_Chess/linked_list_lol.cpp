@@ -128,31 +128,12 @@
 //
 //int main()
 //{
-//    LinkedList myList { 5 } ;
 //    
-//    std::cout << myList << '\n' ;
+//    int myInt { '1' } ;
 //    
-//    myList.append( 6 ) ;
+//    std::cout << static_cast<int>(myInt) << '\n' ;
 //    
-//    std::cout << myList << '\n' ;
-//    
-//    myList.append( 7 ) ;
-//
-//    myList.append( 8 ) ;
-//
-//    myList.append( 9 ) ;
-//
-//    std::cout << myList << '\n' ;
-//    
-//    myList.push( 4 ) ;
-//    
-//    std::cout << myList << '\n' ;
-//    
-//    myList.push( 3 ) ;
-//    myList.push( 2 ) ;
-//    myList.push( 1 ) ;
-//
-//    std::cout << myList << '\n' ;
+//    int intArray [ 6 ] ;
 //
 //
 //

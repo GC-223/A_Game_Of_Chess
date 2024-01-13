@@ -29,6 +29,7 @@ each tile
     
 Piece
     each piece has a color
+        lets try and use a boolean instead of using an enum to represent pieces
     
     each piece has a symbol for how we want them to print
     
@@ -37,11 +38,27 @@ Piece
 Maybe we have a class to handles coordinates
 
 
+ok so to handle move input
+we are going to need some way to get move input from the use
+lets put this in a namespace
+
+    get location of piece they want to move
+    
+    get location of where they want to move that piece
+    
+    they should enter using chess notation
+    there should be some basic error handling for invalid coordinate inputs
+    
+    just some basic error handling
+    so the string must have a length of 2 - NO more and no less
+        
+    there is no need to specify the type of piece when moving it
+        
+    the first element of the string must be a char between 'A' and 'H' inclusive
+    the second element of the string must be a number between 1 and 8
 
 
-we cannot change a specific pieces color and symbol
 
-we can change the specific piece in a tile
 
 
 
