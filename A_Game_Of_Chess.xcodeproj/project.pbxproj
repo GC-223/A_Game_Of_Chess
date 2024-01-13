@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		960F58382B3F6A9100E5FF30 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 960F58372B3F6A9100E5FF30 /* main.cpp */; };
+		9624909D2B5319C900FFEDBD /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9624909B2B5319C900FFEDBD /* Piece.cpp */; };
+		962490A32B531BB500FFEDBD /* ChessBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 962490A12B531BB500FFEDBD /* ChessBoard.cpp */; };
+		962490A62B531D9D00FFEDBD /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 962490A42B531D9D00FFEDBD /* Tile.cpp */; };
 		96E4F6B52B4DF91400732E91 /* linked_list_lol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96E4F6B42B4DF91400732E91 /* linked_list_lol.cpp */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,12 @@
 		960F58342B3F6A9100E5FF30 /* A_Game_Of_Chess */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = A_Game_Of_Chess; sourceTree = BUILT_PRODUCTS_DIR; };
 		960F58372B3F6A9100E5FF30 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		960F583E2B3F6A9B00E5FF30 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		9624909B2B5319C900FFEDBD /* Piece.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
+		9624909C2B5319C900FFEDBD /* Piece.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Piece.hpp; sourceTree = "<group>"; };
+		962490A12B531BB500FFEDBD /* ChessBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChessBoard.cpp; sourceTree = "<group>"; };
+		962490A22B531BB500FFEDBD /* ChessBoard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChessBoard.hpp; sourceTree = "<group>"; };
+		962490A42B531D9D00FFEDBD /* Tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
+		962490A52B531D9D00FFEDBD /* Tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
 		96E4F6B42B4DF91400732E91 /* linked_list_lol.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = linked_list_lol.cpp; path = A_Game_Of_Chess/linked_list_lol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				960F58372B3F6A9100E5FF30 /* main.cpp */,
+				962490A12B531BB500FFEDBD /* ChessBoard.cpp */,
+				962490A22B531BB500FFEDBD /* ChessBoard.hpp */,
+				962490A42B531D9D00FFEDBD /* Tile.cpp */,
+				962490A52B531D9D00FFEDBD /* Tile.hpp */,
+				9624909B2B5319C900FFEDBD /* Piece.cpp */,
+				9624909C2B5319C900FFEDBD /* Piece.hpp */,
 				960F583E2B3F6A9B00E5FF30 /* File */,
 			);
 			path = A_Game_Of_Chess;
@@ -124,8 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9624909D2B5319C900FFEDBD /* Piece.cpp in Sources */,
+				962490A32B531BB500FFEDBD /* ChessBoard.cpp in Sources */,
 				96E4F6B52B4DF91400732E91 /* linked_list_lol.cpp in Sources */,
 				960F58382B3F6A9100E5FF30 /* main.cpp in Sources */,
+				962490A62B531D9D00FFEDBD /* Tile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
